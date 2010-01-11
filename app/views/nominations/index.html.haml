@@ -1,0 +1,16 @@
+%h1 Listing Nominations
+
+%table
+  %tr
+    %th Award
+    %th Nominee
+
+  - for nomination in @nominations
+    %tr
+      %td= h nomination.award
+      %td= h nomination.nominee
+      %td= link_to 'Show', nomination
+      %td= link_to 'Edit', edit_nomination_path(nomination)
+      %td= link_to 'Destroy', nomination, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to 'New Nomination', new_nomination_path

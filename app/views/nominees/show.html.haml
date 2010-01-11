@@ -1,0 +1,16 @@
+%dl
+  %dt Name
+  %dd= h @nominee.name
+  %dt Description
+  %dd= h @nominee.description
+  %dt Movie name
+  %dd= h @nominee.movie_name
+  %dt First name
+  %dd= h @nominee.first_name
+  %dt Last name
+  %dd= h @nominee.last_name
+
+%p
+  = link_to 'Edit', edit_nominee_path(@nominee)
+  |
+  = link_to 'Back', nominees_path

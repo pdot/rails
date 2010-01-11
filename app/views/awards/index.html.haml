@@ -1,0 +1,16 @@
+%h1 Listing Awards
+
+%table
+  %tr
+    %th Name
+    %th Description
+
+  - for award in @awards
+    %tr
+      %td= h award.name
+      %td= h award.description
+      %td= link_to 'Show', award
+      %td= link_to 'Edit', edit_award_path(award)
+      %td= link_to 'Destroy', award, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to 'New Award', new_award_path

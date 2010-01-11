@@ -1,0 +1,9 @@
+%h1 Editing Selection
+
+- form_for(@selection) do |form|
+  = render :partial => 'form', :locals => {:form => form}
+  %p= form.submit 'Update'
+
+%p
+  = link_to 'Show', @selection
+  = link_to 'Back', selections_path

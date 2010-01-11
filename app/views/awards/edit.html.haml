@@ -1,0 +1,9 @@
+%h1 Editing Award
+
+- form_for(@award) do |form|
+  = render :partial => 'form', :locals => {:form => form}
+  %p= form.submit 'Update'
+
+%p
+  = link_to 'Show', @award
+  = link_to 'Back', awards_path

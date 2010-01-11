@@ -1,0 +1,22 @@
+%h1 Listing Nominees
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Movie name
+    %th First name
+    %th Last name
+
+  - for nominee in @nominees
+    %tr
+      %td= h nominee.name
+      %td= h nominee.description
+      %td= h nominee.movie_name
+      %td= h nominee.first_name
+      %td= h nominee.last_name
+      %td= link_to 'Show', nominee
+      %td= link_to 'Edit', edit_nominee_path(nominee)
+      %td= link_to 'Destroy', nominee, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to 'New Nominee', new_nominee_path

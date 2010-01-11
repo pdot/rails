@@ -1,0 +1,9 @@
+%h1 Editing League
+
+- form_for(@league) do |form|
+  = render :partial => 'form', :locals => {:form => form}
+  %p= form.submit 'Update'
+
+%p
+  = link_to 'Show', @league
+  = link_to 'Back', leagues_path

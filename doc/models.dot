@@ -1,0 +1,18 @@
+digraph models_diagram {
+	graph[overlap=false, splines=true]
+	"Award" [shape=Mrecord, label="{Award|name :string\ldescription :text\l}"]
+	"League" [shape=Mrecord, label="{League|name :string\lpasscode :string\ldescription :text\l}"]
+	"Nomination" [shape=Mrecord, label="{Nomination|}"]
+	"Nominee" [shape=Mrecord, label="{Nominee|name :string\ldescription :text\lmovie_name :string\lfirst_name :string\llast_name :string\l}"]
+	"Selection" [shape=Mrecord, label="{Selection|}"]
+	"User" [shape=Mrecord, label="{User|login :string\lname :string\lemail :string\lcrypted_password :string\lsalt :string\lremember_token :string\lremember_token_expires_at :datetime\lactivation_code :string\lactivated_at :datetime\lstate :string\ldeleted_at :datetime\l}"]
+	"UserMailer" [shape=box, style=dotted, label="UserMailer"]
+	"UserObserver" [shape=box, style=dotted, label="UserObserver"]
+	"Award" -> "Nomination" [arrowtail=crow, arrowhead=dot, dir=both]
+	"Award" -> "Nominee" [arrowtail=crow, arrowhead=crow, dir=both]
+	"League" -> "User" [arrowtail=crow, arrowhead=crow, dir=both]
+	"League" -> "Selection" [arrowtail=crow, arrowhead=dot, dir=both]
+	"Nominee" -> "Nomination" [arrowtail=crow, arrowhead=dot, dir=both]
+	"Selection" -> "Nomination" [arrowtail=odot, arrowhead=dot, dir=both]
+	"User" -> "Selection" [arrowtail=crow, arrowhead=dot, dir=both]
+}

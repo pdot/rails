@@ -1,0 +1,12 @@
+%dl
+  %dt Name
+  %dd= h @league.name
+  %dt Passcode
+  %dd= h @league.passcode
+  %dt Description
+  %dd= h @league.description
+
+%p
+  = link_to 'Edit', edit_league_path(@league)
+  |
+  = link_to 'Back', leagues_path

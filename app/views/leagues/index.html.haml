@@ -1,0 +1,18 @@
+%h1 Listing Leagues
+
+%table
+  %tr
+    %th Name
+    %th Passcode
+    %th Description
+
+  - for league in @leagues
+    %tr
+      %td= h league.name
+      %td= h league.passcode
+      %td= h league.description
+      %td= link_to 'Show', league
+      %td= link_to 'Edit', edit_league_path(league)
+      %td= link_to 'Destroy', league, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to 'New League', new_league_path

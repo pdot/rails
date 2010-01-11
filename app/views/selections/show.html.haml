@@ -1,0 +1,10 @@
+%dl
+  %dt User
+  %dd= h @selection.user
+  %dt League
+  %dd= h @selection.league
+
+%p
+  = link_to 'Edit', edit_selection_path(@selection)
+  |
+  = link_to 'Back', selections_path

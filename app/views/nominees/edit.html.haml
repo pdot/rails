@@ -1,0 +1,9 @@
+%h1 Editing Nominee
+
+- form_for(@nominee) do |form|
+  = render :partial => 'form', :locals => {:form => form}
+  %p= form.submit 'Update'
+
+%p
+  = link_to 'Show', @nominee
+  = link_to 'Back', nominees_path

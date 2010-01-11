@@ -1,0 +1,18 @@
+digraph models_diagram {
+	graph[overlap=false, splines=true]
+	"Award" []
+	"League" []
+	"Nomination" []
+	"Nominee" []
+	"Selection" []
+	"User" []
+	"UserMailer" [shape=box, style=dotted, label="UserMailer"]
+	"UserObserver" [shape=box, style=dotted, label="UserObserver"]
+	"Award" -> "Nomination" [arrowtail=crow, arrowhead=dot, dir=both]
+	"Award" -> "Nominee" [arrowtail=crow, arrowhead=crow, dir=both]
+	"League" -> "User" [arrowtail=crow, arrowhead=crow, dir=both]
+	"League" -> "Selection" [arrowtail=crow, arrowhead=dot, dir=both]
+	"Nominee" -> "Nomination" [arrowtail=crow, arrowhead=dot, dir=both]
+	"Selection" -> "Nomination" [arrowtail=odot, arrowhead=dot, dir=both]
+	"User" -> "Selection" [arrowtail=crow, arrowhead=dot, dir=both]
+}

@@ -1,0 +1,10 @@
+%dl
+  %dt Name
+  %dd= h @award.name
+  %dt Description
+  %dd= h @award.description
+
+%p
+  = link_to 'Edit', edit_award_path(@award)
+  |
+  = link_to 'Back', awards_path

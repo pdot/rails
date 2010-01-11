@@ -1,0 +1,16 @@
+%h1 Listing Selections
+
+%table
+  %tr
+    %th User
+    %th League
+
+  - for selection in @selections
+    %tr
+      %td= h selection.user
+      %td= h selection.league
+      %td= link_to 'Show', selection
+      %td= link_to 'Edit', edit_selection_path(selection)
+      %td= link_to 'Destroy', selection, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to 'New Selection', new_selection_path
