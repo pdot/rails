@@ -1,3 +1,6 @@
 mbleigh-uberkit --source gems.github.com
 thoughtbot-pacecar --source gems.github.com
 thoughtbot-sortable_table --source gems.github.com
+mislav-will_paginate --source gems.github.com
+rubyist-aasm --source gems.github.com
+thoughtbot-factory_girl --source gems.github.com
