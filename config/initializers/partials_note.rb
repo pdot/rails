@@ -1,3 +1,4 @@
+if RAILS_ENV != 'production'
 module Footnotes
   module Notes
     class PartialsNote < LogNote
@@ -46,3 +47,4 @@ module Footnotes
   end
 end
 Footnotes::Filter.notes += [:partials]
+end

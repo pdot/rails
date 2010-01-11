@@ -1,6 +1,7 @@
 # Be sure to restart your server when you modify this file
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
+RAILS_ENV = 'production'
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 Rails::Initializer.run do |config|
@@ -8,7 +9,7 @@ Rails::Initializer.run do |config|
   config.logger = Hodel3000CompliantLogger.new(config.log_path)
   config.load_paths += %W(#{Rails.root}/app/mailers #{Rails.root}/app/sweepers #{Rails.root}/app/observers)
   def yell(msg) 
-    #return if RAILS_ENV == 'production' || RAILS_ENV == 'admin'
+    return if RAILS_ENV == 'production' || RAILS_ENV == 'admin'
     # stupid simple logging:
     f = File.open(File.expand_path(File.dirname(__FILE__) + "/../log/yell.log"),"a") 
     f.puts "#{Time.now.to_s :compact_with_seconds} -- #{msg}"
