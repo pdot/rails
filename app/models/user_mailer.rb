@@ -4,7 +4,7 @@ class UserMailer < ActionMailer::Base
     @subject    += 'Please activate your new account'
   
     @body[:url]  = "http://YOURSITE/activate/#{user.activation_code}"
-  
+    logger.warn "Paste this url into your browser to activate account http://localhost:3000/activate/#{user.activation_code}"
   end
   
   def activation(user)

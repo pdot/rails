@@ -1,8 +1,8 @@
 # This controller handles the login/logout function of the site.  
 class SessionsController < ApplicationController
-  # Be sure to include AuthenticationSystem in Application Controller instead
-  include AuthenticatedSystem
-
+  
+  skip_before_filter :login_required
+  
   # render new.rhtml
   def new
   end
@@ -16,12 +16,14 @@ class SessionsController < ApplicationController
       # button. Uncomment if you understand the tradeoffs.
       # reset_session
       self.current_user = user
+      session[:current_user_id] = user.id  # 2323 is this ok?
       new_cookie_flag = (params[:remember_me] == "1")
       handle_remember_cookie! new_cookie_flag
       redirect_back_or_default('/')
       flash[:notice] = "Logged in successfully"
     else
       note_failed_signin
+      flash.now[:error] = "Signin failed"
       @login       = params[:login]
       @remember_me = params[:remember_me]
       render :action => 'new'

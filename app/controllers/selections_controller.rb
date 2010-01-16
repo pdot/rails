@@ -1,4 +1,7 @@
 class SelectionsController < ApplicationController
+  
+  before_filter :login_required
+  
   def index
     @selections = Selection.find(:all)
 

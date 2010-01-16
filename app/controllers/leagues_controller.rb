@@ -1,4 +1,5 @@
 class LeaguesController < ApplicationController
+
   def index
     @leagues = League.find(:all)
 
