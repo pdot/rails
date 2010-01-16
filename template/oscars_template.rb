@@ -88,6 +88,7 @@ gem "mislav-will_paginate",  :lib => "will_paginate", :source => "http://gems.gi
 gem 'mbleigh-uberkit', :lib => 'uberkit', :source => 'http://gems.github.com/'
 gem 'thoughtbot-pacecar', :lib => 'pacecar', :source => 'http://gems.github.com'
 gem 'thoughtbot-sortable_table', :lib => 'sortable_table', :source => 'http://gems.github.com'
+gem "openrain-action_mailer_tls", :lib => "smtp_tls.rb", :source => "http://gems.github.com"
 rake('gems:install', :sudo => true)
 
 file 'lib/hodel_3000_compliant_logger.rb', '
@@ -167,7 +168,7 @@ route "map.root :controller => 'pages', :action => 'index'"
 generate(:authenticated, "user", "sessions --aasm")
 generate(:shoulda_scaffold, "award", "name:string description:text")
 generate(:shoulda_scaffold, "nominee", "name:string description:text movie_name:string first_name:string last_name:string")
-generate(:shoulda_scaffold, "nomination", "award:belongs_to nominee:belongs_to") #2323 : WTF?! this is doing nothing
+generate(:shoulda_scaffold, "nomination", "award:belongs_to nominee:belongs_to")
 generate(:shoulda_scaffold, "league", "name:string passcode:string description:text ")
 generate(:shoulda_scaffold, "selection", "user:belongs_to league:belongs_to")
 

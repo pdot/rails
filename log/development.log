@@ -1920,3 +1920,181 @@ Jan 15 22:20:25 JasonsMac rails[70205]: Parameters: {"format"=>"xml", "action"=>
 Jan 15 22:20:25 JasonsMac rails[70205]: [4;36;1mAward Load (0.4ms)[0m   [0;1mSELECT * FROM `awards` [0m
 Jan 15 22:20:25 JasonsMac rails[70205]: [4;35;1mAward Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `awards`[0m
 Jan 15 22:20:25 JasonsMac rails[70205]: Completed in 151ms (View: 142, DB: 2) | 200 OK [http://localhost/awards.xml]
+Jan 16 09:14:30 JasonsMac rails[71761]: [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+Jan 16 09:14:30 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:14:30 JasonsMac rails[71761]: Processing UsersController#create (for 127.0.0.1 at 2010-01-16 09:14:30) [GET]
+Jan 16 09:14:30 JasonsMac rails[71761]: Parameters: {"action"=>"create", "controller"=>"users"}
+Jan 16 09:14:30 JasonsMac rails[71761]: [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Jan 16 09:14:30 JasonsMac rails[71761]: [4;35;1mUser Load (0.6ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`login` IS NULL) LIMIT 1[0m
+Jan 16 09:14:30 JasonsMac rails[71761]: [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` IS NULL) LIMIT 1[0m
+Jan 16 09:14:30 JasonsMac rails[71761]: [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`login` IS NULL) LIMIT 1[0m
+Jan 16 09:14:30 JasonsMac rails[71761]: [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` IS NULL) LIMIT 1[0m
+Jan 16 09:14:30 JasonsMac rails[71761]: Rendering users/new
+Jan 16 09:14:30 JasonsMac rails[71761]: Completed in 195ms (View: 150, DB: 4) | 200 OK [http://localhost/register]
+Jan 16 09:14:50 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+Jan 16 09:14:50 JasonsMac rails[71761]: [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:14:50 JasonsMac rails[71761]: Processing UsersController#create (for 127.0.0.1 at 2010-01-16 09:14:50) [POST]
+Jan 16 09:14:50 JasonsMac rails[71761]: Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"jason", "email"=>"jasonwhyne@gmail.com"}, "commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"XL1kO12dyAsosbFYnHgkB/NYyt45fbGGmWdl5vRxArQ=", "controller"=>"users"}
+Jan 16 09:14:50 JasonsMac rails[71761]: [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Jan 16 09:14:50 JasonsMac rails[71761]: [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`login` = BINARY 'jason') LIMIT 1[0m
+Jan 16 09:14:50 JasonsMac rails[71761]: [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'jasonwhyne@gmail.com') LIMIT 1[0m
+Jan 16 09:14:50 JasonsMac rails[71761]: [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`login` = BINARY 'jason') LIMIT 1[0m
+Jan 16 09:14:50 JasonsMac rails[71761]: [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'jasonwhyne@gmail.com') LIMIT 1[0m
+Jan 16 09:14:50 JasonsMac rails[71761]: Rendering users/new
+Jan 16 09:14:50 JasonsMac rails[71761]: Completed in 39ms (View: 14, DB: 3) | 200 OK [http://localhost/users]
+Jan 16 09:15:14 JasonsMac rails[71761]: [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+Jan 16 09:15:14 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:15:15 JasonsMac rails[71761]: Processing UsersController#create (for 127.0.0.1 at 2010-01-16 09:15:15) [POST]
+Jan 16 09:15:15 JasonsMac rails[71761]: Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"jason", "email"=>"jason.whyne@pdot.ca"}, "commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"XL1kO12dyAsosbFYnHgkB/NYyt45fbGGmWdl5vRxArQ=", "controller"=>"users"}
+Jan 16 09:15:15 JasonsMac rails[71761]: [4;36;1mUser Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Jan 16 09:15:15 JasonsMac rails[71761]: [4;35;1mUser Load (0.6ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`login` = BINARY 'jason') LIMIT 1[0m
+Jan 16 09:15:15 JasonsMac rails[71761]: [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'jason.whyne@pdot.ca') LIMIT 1[0m
+Jan 16 09:15:15 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+Jan 16 09:15:15 JasonsMac rails[71761]: [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `activated_at`, `crypted_password`, `deleted_at`, `remember_token_expires_at`, `activation_code`, `remember_token`, `login`, `email`, `created_at`, `state`) VALUES('', 'a6ebed633e2e2414d6f4e31bf6330c38d4e861b2', '2010-01-16 17:15:15', NULL, '0aa26ca03a19211eef2c59acd51a2e42c612834f', NULL, NULL, '3d83b611a801f6b6a60549d7dbb6567b92c1ceb3', NULL, 'jason', 'jason.whyne@pdot.ca', '2010-01-16 17:15:15', 'pending')[0m
+Jan 16 09:15:15 JasonsMac rails[71761]: Paste this url into your browser to activate account http://localhost:3000/activate/3d83b611a801f6b6a60549d7dbb6567b92c1ceb3
+Jan 16 09:15:15 JasonsMac rails[71761]: Sent mail to jason.whyne@pdot.ca
+Jan 16 09:15:15 JasonsMac rails[71761]: Date: Sat, 16 Jan 2010 09:15:15 -0800From: ADMINEMAILTo: jason.whyne@pdot.caSubject: [YOURSITE] Please activate your new accountMime-Version: 1.0Content-Type: text/plain; charset=utf-8Your account has been created.  Username: jason  Password: jasonwVisit this url to activate your account:  http://YOURSITE/activate/3d83b611a801f6b6a60549d7dbb6567b92c1ceb3
+Jan 16 09:15:18 JasonsMac rails[71761]: [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Jan 16 09:15:18 JasonsMac rails[71761]: [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`login` = BINARY 'jason' AND `users`.id <> 4) LIMIT 1[0m
+Jan 16 09:15:18 JasonsMac rails[71761]: [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'jason.whyne@pdot.ca' AND `users`.id <> 4) LIMIT 1[0m
+Jan 16 09:15:18 JasonsMac rails[71761]: Redirected to http://localhost:2999/leagues/
+Jan 16 09:15:18 JasonsMac rails[71761]: Completed in 3193ms (DB: 6) | 302 Found [http://localhost/users]
+Jan 16 09:15:18 JasonsMac rails[71761]: [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+Jan 16 09:15:18 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:15:18 JasonsMac rails[71761]: Processing LeaguesController#index (for 127.0.0.1 at 2010-01-16 09:15:18) [GET]
+Jan 16 09:15:18 JasonsMac rails[71761]: Parameters: {"action"=>"index", "controller"=>"leagues"}
+Jan 16 09:15:18 JasonsMac rails[71761]: [4;36;1mLeague Load (0.3ms)[0m   [0;1mSELECT * FROM `leagues` [0m
+Jan 16 09:15:18 JasonsMac rails[71761]: Rendering template within layouts/leagues
+Jan 16 09:15:18 JasonsMac rails[71761]: Rendering leagues/index
+Jan 16 09:15:18 JasonsMac rails[71761]: Completed in 37ms (View: 19, DB: 1) | 200 OK [http://localhost/leagues/]
+Jan 16 09:16:11 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+Jan 16 09:16:11 JasonsMac rails[71761]: [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:16:11 JasonsMac rails[71761]: Processing UsersController#activate (for 127.0.0.1 at 2010-01-16 09:16:11) [GET]
+Jan 16 09:16:11 JasonsMac rails[71761]: Parameters: {"activation_code"=>"3d83b611a801f6b6a60549d7dbb6567b92c1ceb3", "action"=>"activate", "controller"=>"users"}
+Jan 16 09:16:11 JasonsMac rails[71761]: [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Jan 16 09:16:11 JasonsMac rails[71761]: [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`activation_code` = '3d83b611a801f6b6a60549d7dbb6567b92c1ceb3') LIMIT 1[0m
+Jan 16 09:16:11 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+Jan 16 09:16:11 JasonsMac rails[71761]: [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE `users` SET `activated_at` = '2010-01-16 17:16:11', `activation_code` = NULL, `state` = 'active', `updated_at` = '2010-01-16 17:16:11' WHERE `id` = 4[0m
+Jan 16 09:16:11 JasonsMac rails[71761]: Sent mail to jason.whyne@pdot.ca
+Jan 16 09:16:11 JasonsMac rails[71761]: Date: Sat, 16 Jan 2010 09:16:11 -0800From: ADMINEMAILTo: jason.whyne@pdot.caSubject: [YOURSITE] Your account has been activated!Mime-Version: 1.0Content-Type: text/plain; charset=utf-8jason, your account has been activated.  Welcome aboard!  http://YOURSITE/
+Jan 16 09:16:13 JasonsMac rails[71761]: [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Jan 16 09:16:13 JasonsMac rails[71761]: Redirected to http://localhost:2999/login
+Jan 16 09:16:13 JasonsMac rails[71761]: Completed in 2419ms (DB: 4) | 302 Found [http://localhost/activate/3d83b611a801f6b6a60549d7dbb6567b92c1ceb3]
+Jan 16 09:16:13 JasonsMac rails[71761]: [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+Jan 16 09:16:13 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:16:13 JasonsMac rails[71761]: Processing SessionsController#new (for 127.0.0.1 at 2010-01-16 09:16:13) [GET]
+Jan 16 09:16:13 JasonsMac rails[71761]: Parameters: {"action"=>"new", "controller"=>"sessions"}
+Jan 16 09:16:13 JasonsMac rails[71761]: Rendering sessions/new
+Jan 16 09:16:13 JasonsMac rails[71761]: Completed in 20ms (View: 11, DB: 0) | 200 OK [http://localhost/login]
+Jan 16 09:16:30 JasonsMac rails[71761]: [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+Jan 16 09:16:30 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:16:30 JasonsMac rails[71761]: Processing SessionsController#create (for 127.0.0.1 at 2010-01-16 09:16:30) [POST]
+Jan 16 09:16:30 JasonsMac rails[71761]: Parameters: {"commit"=>"Log in", "action"=>"create", "authenticity_token"=>"XL1kO12dyAsosbFYnHgkB/NYyt45fbGGmWdl5vRxArQ=", "controller"=>"sessions", "login"=>"jason", "password"=>"[FILTERED]"}
+Jan 16 09:16:30 JasonsMac rails[71761]: [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'jason') AND (users.state = 'active') LIMIT 1[0m
+Jan 16 09:16:30 JasonsMac rails[71761]: [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Jan 16 09:16:30 JasonsMac rails[71761]: [4;36;1mSQL (19.2ms)[0m   [0;1mBEGIN[0m
+Jan 16 09:16:30 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Jan 16 09:16:30 JasonsMac rails[71761]: Redirected to http://localhost:2999/
+Jan 16 09:16:30 JasonsMac rails[71761]: Completed in 32ms (DB: 22) | 302 Found [http://localhost/session]
+Jan 16 09:16:30 JasonsMac rails[71761]: [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+Jan 16 09:16:30 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:16:30 JasonsMac rails[71761]: Processing PagesController#index (for 127.0.0.1 at 2010-01-16 09:16:30) [GET]
+Jan 16 09:16:30 JasonsMac rails[71761]: Parameters: {"action"=>"index", "controller"=>"pages"}
+Jan 16 09:16:30 JasonsMac rails[71761]: Rendering pages/index
+Jan 16 09:16:30 JasonsMac rails[71761]: [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Jan 16 09:16:30 JasonsMac rails[71761]: [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Jan 16 09:16:30 JasonsMac rails[71761]: Completed in 42ms (View: 28, DB: 3) | 200 OK [http://localhost/]
+Jan 16 09:26:59 JasonsMac rails[71761]: [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+Jan 16 09:26:59 JasonsMac rails[71761]: [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:27:00 JasonsMac rails[71761]: Processing AwardsController#index to xml (for 127.0.0.1 at 2010-01-16 09:27:00) [GET]
+Jan 16 09:27:00 JasonsMac rails[71761]: Parameters: {"format"=>"xml", "action"=>"index", "controller"=>"awards"}
+Jan 16 09:27:00 JasonsMac rails[71761]: [4;36;1mAward Load (0.5ms)[0m   [0;1mSELECT * FROM `awards` [0m
+Jan 16 09:27:00 JasonsMac rails[71761]: [4;35;1mAward Columns (23.0ms)[0m   [0mSHOW FIELDS FROM `awards`[0m
+Jan 16 09:27:00 JasonsMac rails[71761]: Completed in 103ms (View: 69, DB: 24) | 200 OK [http://localhost/awards.xml]
+Jan 16 09:27:59 JasonsMac rails[71761]: [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+Jan 16 09:27:59 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:27:59 JasonsMac rails[71761]: Processing AwardsController#index to xml (for 127.0.0.1 at 2010-01-16 09:27:59) [GET]
+Jan 16 09:27:59 JasonsMac rails[71761]: Parameters: {"format"=>"xml", "action"=>"index", "controller"=>"awards"}
+Jan 16 09:27:59 JasonsMac rails[71761]: [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'jason') AND (users.state = 'active') LIMIT 1[0m
+Jan 16 09:27:59 JasonsMac rails[71761]: [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Jan 16 09:27:59 JasonsMac rails[71761]: [4;36;1mAward Load (0.3ms)[0m   [0;1mSELECT * FROM `awards` [0m
+Jan 16 09:28:00 JasonsMac rails[71761]: [4;35;1mAward Columns (16.7ms)[0m   [0mSHOW FIELDS FROM `awards`[0m
+Jan 16 09:28:00 JasonsMac rails[71761]: Completed in 109ms (View: 6, DB: 20) | 200 OK [http://localhost/awards.xml]
+Jan 16 09:29:06 JasonsMac rails[71761]: [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+Jan 16 09:29:06 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:29:06 JasonsMac rails[71761]: Processing PagesController#index (for 127.0.0.1 at 2010-01-16 09:29:06) [GET]
+Jan 16 09:29:06 JasonsMac rails[71761]: Parameters: {"action"=>"index", "controller"=>"pages"}
+Jan 16 09:29:06 JasonsMac rails[71761]: Rendering pages/index
+Jan 16 09:29:06 JasonsMac rails[71761]: [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Jan 16 09:29:06 JasonsMac rails[71761]: [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Jan 16 09:29:06 JasonsMac rails[71761]: Completed in 21ms (View: 6, DB: 3) | 200 OK [http://localhost/]
+Jan 16 09:29:10 JasonsMac rails[71761]: [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+Jan 16 09:29:10 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:29:10 JasonsMac rails[71761]: Processing AwardsController#index (for 127.0.0.1 at 2010-01-16 09:29:10) [GET]
+Jan 16 09:29:10 JasonsMac rails[71761]: Parameters: {"action"=>"index", "controller"=>"awards"}
+Jan 16 09:29:10 JasonsMac rails[71761]: [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Jan 16 09:29:10 JasonsMac rails[71761]: [4;35;1mUser Load (9.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Jan 16 09:29:10 JasonsMac rails[71761]: [4;36;1mAward Load (0.4ms)[0m   [0;1mSELECT * FROM `awards` [0m
+Jan 16 09:29:10 JasonsMac rails[71761]: Rendering template within layouts/awards
+Jan 16 09:29:10 JasonsMac rails[71761]: Rendering awards/index
+Jan 16 09:29:10 JasonsMac rails[71761]: [4;35;1mAward Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `awards`[0m
+Jan 16 09:29:11 JasonsMac rails[71761]: Completed in 119ms (View: 19, DB: 14) | 200 OK [http://localhost/awards]
+Jan 16 09:29:15 JasonsMac rails[71761]: [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+Jan 16 09:29:15 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:29:15 JasonsMac rails[71761]: Processing SessionsController#destroy (for 127.0.0.1 at 2010-01-16 09:29:15) [GET]
+Jan 16 09:29:15 JasonsMac rails[71761]: Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+Jan 16 09:29:15 JasonsMac rails[71761]: Redirected to http://localhost:2999/
+Jan 16 09:29:15 JasonsMac rails[71761]: Completed in 3ms (DB: 0) | 302 Found [http://localhost/logout]
+Jan 16 09:29:15 JasonsMac rails[71761]: [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+Jan 16 09:29:15 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:29:15 JasonsMac rails[71761]: Processing PagesController#index (for 127.0.0.1 at 2010-01-16 09:29:15) [GET]
+Jan 16 09:29:15 JasonsMac rails[71761]: Parameters: {"action"=>"index", "controller"=>"pages"}
+Jan 16 09:29:15 JasonsMac rails[71761]: Rendering pages/index
+Jan 16 09:29:15 JasonsMac rails[71761]: Completed in 15ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+Jan 16 09:29:24 JasonsMac rails[71761]: [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+Jan 16 09:29:24 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:29:24 JasonsMac rails[71761]: Processing AwardsController#index (for 127.0.0.1 at 2010-01-16 09:29:24) [GET]
+Jan 16 09:29:24 JasonsMac rails[71761]: Parameters: {"action"=>"index", "controller"=>"awards"}
+Jan 16 09:29:24 JasonsMac rails[71761]: Redirected to http://localhost:2999/session/new
+Jan 16 09:29:24 JasonsMac rails[71761]: Filter chain halted as [:login_required] rendered_or_redirected.
+Jan 16 09:29:24 JasonsMac rails[71761]: Completed in 1ms (DB: 0) | 302 Found [http://localhost/awards]
+Jan 16 09:29:24 JasonsMac rails[71761]: [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+Jan 16 09:29:24 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:29:24 JasonsMac rails[71761]: Processing SessionsController#new (for 127.0.0.1 at 2010-01-16 09:29:24) [GET]
+Jan 16 09:29:24 JasonsMac rails[71761]: Parameters: {"action"=>"new", "controller"=>"sessions"}
+Jan 16 09:29:24 JasonsMac rails[71761]: Rendering sessions/new
+Jan 16 09:29:24 JasonsMac rails[71761]: Completed in 12ms (View: 3, DB: 0) | 200 OK [http://localhost/session/new]
+Jan 16 09:29:37 JasonsMac rails[71761]: [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+Jan 16 09:29:37 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:29:37 JasonsMac rails[71761]: Processing AwardsController#index to xml (for 127.0.0.1 at 2010-01-16 09:29:37) [GET]
+Jan 16 09:29:37 JasonsMac rails[71761]: Parameters: {"format"=>"xml", "action"=>"index", "controller"=>"awards"}
+Jan 16 09:29:37 JasonsMac rails[71761]: [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'jason') AND (users.state = 'active') LIMIT 1[0m
+Jan 16 09:29:37 JasonsMac rails[71761]: [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Jan 16 09:29:37 JasonsMac rails[71761]: [4;36;1mAward Load (0.4ms)[0m   [0;1mSELECT * FROM `awards` [0m
+Jan 16 09:29:37 JasonsMac rails[71761]: [4;35;1mAward Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `awards`[0m
+Jan 16 09:29:37 JasonsMac rails[71761]: Completed in 30ms (View: 7, DB: 9) | 200 OK [http://localhost/awards.xml]
+Jan 16 09:29:50 JasonsMac rails[71761]: [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+Jan 16 09:29:50 JasonsMac rails[71761]: [4;35;1mSQL (2.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:29:50 JasonsMac rails[71761]: Processing AwardsController#index to xml (for 127.0.0.1 at 2010-01-16 09:29:50) [GET]
+Jan 16 09:29:50 JasonsMac rails[71761]: Parameters: {"format"=>"xml", "action"=>"index", "controller"=>"awards"}
+Jan 16 09:29:50 JasonsMac rails[71761]: [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'jason') AND (users.state = 'active') LIMIT 1[0m
+Jan 16 09:29:50 JasonsMac rails[71761]: [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Jan 16 09:29:50 JasonsMac rails[71761]: Filter chain halted as [:login_required] rendered_or_redirected.
+Jan 16 09:29:50 JasonsMac rails[71761]: Completed in 13ms (View: 3, DB: 5) | 401 Unauthorized [http://localhost/awards.xml]
+Jan 16 09:29:50 JasonsMac rails[71761]: [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+Jan 16 09:29:50 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:29:50 JasonsMac rails[71761]: Processing AwardsController#index to xml (for 127.0.0.1 at 2010-01-16 09:29:50) [GET]
+Jan 16 09:29:50 JasonsMac rails[71761]: Parameters: {"format"=>"xml", "action"=>"index", "controller"=>"awards"}
+Jan 16 09:29:50 JasonsMac rails[71761]: [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'jason') AND (users.state = 'active') LIMIT 1[0m
+Jan 16 09:29:50 JasonsMac rails[71761]: [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Jan 16 09:29:50 JasonsMac rails[71761]: Filter chain halted as [:login_required] rendered_or_redirected.
+Jan 16 09:29:50 JasonsMac rails[71761]: Completed in 79ms (View: 1, DB: 3) | 401 Unauthorized [http://localhost/awards.xml]
+Jan 16 09:30:00 JasonsMac rails[71761]: [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+Jan 16 09:30:00 JasonsMac rails[71761]: [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Jan 16 09:30:00 JasonsMac rails[71761]: Processing AwardsController#index to xml (for 127.0.0.1 at 2010-01-16 09:30:00) [GET]
+Jan 16 09:30:00 JasonsMac rails[71761]: Parameters: {"format"=>"xml", "action"=>"index", "controller"=>"awards"}
+Jan 16 09:30:00 JasonsMac rails[71761]: [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'jason') AND (users.state = 'active') LIMIT 1[0m
+Jan 16 09:30:00 JasonsMac rails[71761]: [4;35;1mUser Columns (12.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Jan 16 09:30:00 JasonsMac rails[71761]: [4;36;1mAward Load (3.4ms)[0m   [0;1mSELECT * FROM `awards` [0m
+Jan 16 09:30:00 JasonsMac rails[71761]: [4;35;1mAward Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `awards`[0m
+Jan 16 09:30:00 JasonsMac rails[71761]: Completed in 56ms (View: 9, DB: 22) | 200 OK [http://localhost/awards.xml]

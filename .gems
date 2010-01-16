@@ -5,3 +5,4 @@ mislav-will_paginate --source gems.github.com
 rubyist-aasm --source gems.github.com
 thoughtbot-factory_girl --source gems.github.com
 josevalim-rails-footnotes --source gems.github.com
+openrain-action_mailer_tls --source gems.github.com
