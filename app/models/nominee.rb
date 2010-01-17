@@ -1,6 +1,6 @@
 class Nominee < ActiveRecord::Base
-has_many :nominations
-has_many :awards, :through => :nominations
+  has_many :nominations
+  has_many :awards, :through => :nominations
 end
 
 # == Schema Information

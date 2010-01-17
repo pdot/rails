@@ -7,8 +7,8 @@
 
   - for nomination in @nominations
     %tr
-      %td= h nomination.award
-      %td= h nomination.nominee
+      %td= h nomination.award.name
+      %td= h nomination.nominee.name
       %td= link_to 'Show', nomination
       %td= link_to 'Edit', edit_nomination_path(nomination)
       %td= link_to 'Destroy', nomination, :confirm => 'Are you sure?', :method => :delete

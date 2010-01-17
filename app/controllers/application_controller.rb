@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
   
-  before_filter :login_required #, :except => %w[ index show ]
+  #before_filter :login_required #, :except => %w[ index show ]
 
 # private
 #   def current_user 

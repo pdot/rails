@@ -1,7 +1,7 @@
 class Selection < ActiveRecord::Base
-has_one :nomination
-belongs_to :user
-belongs_to :league
+  has_one :nomination
+  belongs_to :user
+  belongs_to :league
 end
 
 # == Schema Information

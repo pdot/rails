@@ -1,8 +1,8 @@
 %dl
   %dt Award
-  %dd= h @nomination.award
+  %dd= h @nomination.award.name
   %dt Nominee
-  %dd= h @nomination.nominee
+  %dd= h @nomination.nominee.name
 
 %p
   = link_to 'Edit', edit_nomination_path(@nomination)

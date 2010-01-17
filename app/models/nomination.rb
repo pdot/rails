@@ -1,6 +1,6 @@
 class Nomination < ActiveRecord::Base
-belongs_to :award
-belongs_to :nominee
+  belongs_to :award
+  belongs_to :nominee
 end
 
 # == Schema Information

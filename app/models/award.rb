@@ -1,6 +1,10 @@
 class Award < ActiveRecord::Base
   has_many :nominations
   has_many :nominees, :through => :nominations
+  
+  def nominees
+    Nominee.scoped( :joins => { :nominations => :award }, :conditions => { :nominations => { :award_id => id }} )
+  end
 end
 
 # == Schema Information

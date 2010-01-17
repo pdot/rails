@@ -1,24 +1,27 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :selections
-
   map.resources :leagues
-
   map.resources :nominations
-
-  map.resources :nominees
-
-  map.resources :awards
-
+  map.resources :nominees #, :only => [:index, :show]
+  map.resources :awards #, :only => [:index, :show]
+  #map.resources :nominees, :path_prefix => '/awards/:award_id' 
+  #map.resources :awards do |award|
+  #  person.resources :nominees
+  #end
+  map.resources :awards do |awards|
+    awards.resources :nominees, :name_prefix => "award_"
+  end
+  
+  
+  map.resources :users
+  map.resource :session
+  map.root :controller => 'pages', :action => 'index'
+  
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.connect '/activate/:activation_code', :controller => 'users', :action => 'activate'
-  map.resources :users
-
-  map.resource :session
-
-  map.root :controller => 'pages', :action => 'index'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

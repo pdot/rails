@@ -1,6 +1,7 @@
 class NomineesController < ApplicationController
   def index
-    @nominees = Nominee.find(:all)
+    #@nominees = Nominee.find(:all)
+    @nominees = Award.find_by_id(params[:award_id]).nominees
 
     respond_to do |format|
       format.html
