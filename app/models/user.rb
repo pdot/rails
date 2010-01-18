@@ -40,8 +40,10 @@ class User < ActiveRecord::Base
     self.deleted_at = nil
     self.activation_code = self.class.make_token
   end
-  has_and_belongs_to_many :leagues
+  
   has_many :selections
+  has_many :memberships
+  has_many :leagues, :through => :memberships
 end
 
 # == Schema Information

@@ -1,11 +1,12 @@
 class LeaguesController < ApplicationController
 
   def index
-    @leagues = League.find(:all)
+    @leagues = User.find(current_user.id).leagues
 
     respond_to do |format|
       format.html
       format.xml  { render :xml => @leagues }
+      format.xml  { render :json => @leagues }
     end
   end
 
@@ -32,16 +33,20 @@ class LeaguesController < ApplicationController
   end
 
   def create
+    @user = User.find(current_user.id)
     @league = League.new(params[:league])
-
+    
     respond_to do |format|
       if @league.save
+        @user.leagues << @league # TODO : is this the best way?
         flash[:notice] = 'League was successfully created.'
         format.html { redirect_to(@league) }
         format.xml  { render :xml => @league, :status => :created, :location => @league }
+        format.json  { render :json => @league, :status => :created, :location => @league }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @league.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @league.errors, :status => :unprocessable_entity }
       end
     end
   end

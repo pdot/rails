@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :memberships
+
   map.resources :selections
   map.resources :leagues
   map.resources :nominations

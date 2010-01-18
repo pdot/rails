@@ -1,6 +1,6 @@
 class League < ActiveRecord::Base
-has_and_belongs_to_many :users
-has_many :selections
+  has_many :memberships
+  has_many :users, :through => :memberships
 end
 
 # == Schema Information

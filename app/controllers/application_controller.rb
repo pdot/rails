@@ -10,17 +10,4 @@ class ApplicationController < ActionController::Base
   include AuthenticatedSystem
   
   before_filter :login_required #, :except => %w[ index show ]
-
-# private
-#   def current_user 
-#     @_current_user ||= session[:current_user_id] && User.find(session[:current_user_id])
-#   end 
-#    
-#   def require_login
-#     unless logged_in
-#   end
-#   
-#   def logged_in?
-#     !!current_user
-#   end
 end

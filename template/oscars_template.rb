@@ -171,13 +171,14 @@ generate(:shoulda_scaffold, "nominee", "name:string description:text movie_name:
 generate(:shoulda_scaffold, "nomination", "award:belongs_to nominee:belongs_to")
 generate(:shoulda_scaffold, "league", "name:string passcode:string description:text ")
 generate(:shoulda_scaffold, "selection", "user:belongs_to league:belongs_to")
+generate(:shoulda_scaffold, "memberships", "user:belongs_to league:belongs_to")
 
 insert_model_lines "nomination", ["belongs_to :award", "belongs_to :nominee"]
 insert_model_lines "award", ["has_many :nominations", "has_many :nominees, :through => :nominations"]
 insert_model_lines "nominee", ["has_many :nominations", "has_many :awards, :through => :nominations"]
-insert_model_lines "selection", ["has_one :nomination", "belongs_to :user", "belongs_to :league"]
-insert_model_lines "user", ["has_and_belongs_to_many :leagues", "has_many :selections"]
-insert_model_lines "league", ["has_and_belongs_to_many :users", "has_many :selections"]
+insert_model_lines "selection", ["has_one :nomination", "belongs_to :user"]
+insert_model_lines "user", ["has_many :selections", "has_many :memberships", "has_many :leagues, :through => :memberships"]
+insert_model_lines "league", ["has_many :memberships", "has_many :users, :through => :memberships"]
 capify!
 run 'cp config/environments/production.rb config/environments/staging.rb'
 file "config/deploy/production.rb", "set :rails_env, 'production'"
