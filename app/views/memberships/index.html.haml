@@ -1,0 +1,16 @@
+%h1 Listing Memberships
+
+%table
+  %tr
+    %th League
+    %th User
+
+  - for membership in @memberships
+    %tr
+      %td= h membership.league
+      %td= h membership.user
+      %td= link_to 'Show', membership
+      %td= link_to 'Edit', edit_membership_path(membership)
+      %td= link_to 'Destroy', membership, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to 'New Membership', new_membership_path

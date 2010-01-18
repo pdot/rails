@@ -1,0 +1,10 @@
+%dl
+  %dt League
+  %dd= h @membership.league
+  %dt User
+  %dd= h @membership.user
+
+%p
+  = link_to 'Edit', edit_membership_path(@membership)
+  |
+  = link_to 'Back', memberships_path
