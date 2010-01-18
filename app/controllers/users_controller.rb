@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   # Protect these actions behind an admin login
   # before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
+  skip_before_filter :login_required
   before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
   
   # render new.rhtml
@@ -8,6 +9,26 @@ class UsersController < ApplicationController
     @user = User.new
   end
  
+  def create
+    logout_keeping_session!
+    @user = User.new(params[:user])
+    @user.register! if @user && @user.valid?
+    success = @user && @user.valid?
+    respond_to do |format|
+      if success && @user.errors.empty?
+        flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
+        format.html  { redirect_back_or_default('/') }
+        format.xml  { head :ok }   # TODO: this is probably insecure! review and fix it.
+        format.json { head :ok }
+      else
+        flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
+        format.html { render :action => 'new' }
+        format.json { render :xml => @user.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+  
   def create
     logout_keeping_session!
     @user = User.new(params[:user])
