@@ -6223,3 +6223,9 @@ Jan 18 13:55:23 JasonsMac rails[81763]: [4;35;1mUser Load (0.2ms)[0m   [0mSEL
 Jan 18 13:55:23 JasonsMac rails[81763]: [4;36;1mLeague Load (0.5ms)[0m   [0;1mSELECT `leagues`.* FROM `leagues` INNER JOIN `memberships` ON `leagues`.id = `memberships`.league_id WHERE ((`memberships`.user_id = 4)) [0m
 Jan 18 13:55:23 JasonsMac rails[81763]: [4;35;1mLeague Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `leagues`[0m
 Jan 18 13:55:23 JasonsMac rails[81763]: Completed in 29ms (View: 12, DB: 5) | 200 OK [http://localhost/leagues.xml]
+Jan 18 16:45:58 JasonsMac rails[81763]: [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+Jan 18 16:45:58 JasonsMac rails[81763]: [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Jan 18 16:45:58 JasonsMac rails[81763]: Processing UsersController#index (for 127.0.0.1 at 2010-01-18 16:45:58) [GET]
+Jan 18 16:45:58 JasonsMac rails[81763]: Parameters: {"action"=>"index", "controller"=>"users"}
+Jan 18 16:45:58 JasonsMac rails[81763]: ActionController::UnknownAction (No action responded to index. Actions: activate, create, destroy, new, purge, suspend, and unsuspend):  haml (2.2.16) lib/sass/plugin/rails.rb:19:in `process'
+Jan 18 16:45:58 JasonsMac rails[81763]: Rendering rescues/layout (not_found)
