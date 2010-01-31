@@ -52,7 +52,6 @@ Rails::Initializer.run do |config|
     :address => "smtp.gmail.com",
     :port => 587,
     :authentication => :plain,
-    #:enable_starttls_auto => true,
     :user_name => "pdotsmtp@gmail.com",
     :password =>  "deleteme"
   }

@@ -1,6 +1,19 @@
 class League < ActiveRecord::Base
+  # TODO: validate that each league has at least one user
+  
+  before_create :generate_passcode
+  
   has_many :memberships
   has_many :users, :through => :memberships
+  
+  def generate_passcode
+      chars = 'abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789'
+      value = ""
+      6.times{value  << chars[rand(chars.size)]}
+      #value
+      self.passcode = value
+  end
+  
 end
 
 # == Schema Information

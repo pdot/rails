@@ -33,9 +33,10 @@ class LeaguesController < ApplicationController
   end
 
   def create
+    # automatically create a passcode
     @user = User.find(current_user.id)
-    @league = League.new(params[:league])
-    
+    @league = League.new(params[:league]) # TODO: pretty sure this is not secure. fix it.
+     
     respond_to do |format|
       if @league.save
         @user.leagues << @league # TODO : is this the best way?
@@ -48,6 +49,27 @@ class LeaguesController < ApplicationController
         format.xml  { render :xml => @league.errors, :status => :unprocessable_entity }
         format.json  { render :json => @league.errors, :status => :unprocessable_entity }
       end
+    end
+  end
+  
+  def join
+    @user = User.find(current_user.id)
+    @league = League.find_by_passcode(params[:passcode])
+    
+    respond_to do |format|
+      if @league
+        if @user.leagues.exists?(@league.id)
+          flash[:notice] = 'You are already a member of this pool.'
+        else
+          @user.leagues << @league
+          flash[:notice] = 'You successfully joined ' + @league.name + '.'
+        end
+        format.xml  { head :ok }
+      else
+        flash[:notice] = 'Error joining pool. Please make sure your activation code is spelled properly.'
+        format.xml  { head :bad_request }
+      end
+      format.html { redirect_to(leagues_url) }
     end
   end
 
@@ -67,8 +89,11 @@ class LeaguesController < ApplicationController
   end
 
   def destroy
+    @user = User.find(current_user.id)
     @league = League.find(params[:id])
-    @league.destroy
+    @user.leagues.delete(@league)
+    
+    @league.destroy unless @league.users.count > 1
 
     respond_to do |format|
       format.html { redirect_to(leagues_url) }
