@@ -1,8 +1,11 @@
 class NomineesController < ApplicationController
   def index
-    #@nominees = Nominee.find(:all)
-    @nominees = Award.find_by_id(params[:award_id]).nominees
-
+    if (params[:award_id])
+      @nominees = Award.find_by_id(params[:award_id]).nominees
+    else
+      @nominees = Nominee.find(:all)
+    end
+    
     respond_to do |format|
       format.html
       format.xml  { render :xml => @nominees }

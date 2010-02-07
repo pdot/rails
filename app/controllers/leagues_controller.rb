@@ -87,6 +87,15 @@ class LeaguesController < ApplicationController
       end
     end
   end
+  
+  def standings
+    @league = League.find(params[:id])
+    @users = @league.users
+    respond_to do |format|
+      format.html
+      format.xml  { render :xml => @users.to_xml(:only => [:login, :score]) }
+    end
+  end
 
   def destroy
     @user = User.find(current_user.id)

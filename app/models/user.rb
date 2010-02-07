@@ -44,6 +44,8 @@ class User < ActiveRecord::Base
   has_many :selections
   has_many :memberships
   has_many :leagues, :through => :memberships
+  
+  default_scope :order => "score DESC"  # TODO: this is inefficient!!!
 end
 
 # == Schema Information

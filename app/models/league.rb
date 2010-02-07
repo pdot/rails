@@ -13,7 +13,7 @@ class League < ActiveRecord::Base
       #value
       self.passcode = value
   end
-  
+    
 end
 
 # == Schema Information

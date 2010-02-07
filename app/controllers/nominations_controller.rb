@@ -36,9 +36,10 @@ class NominationsController < ApplicationController
     respond_to do |format|
       if @nomination.save
         flash[:notice] = 'Nomination was successfully created.'
-        format.html { redirect_to(@nomination) }
+        format.html { render :action => "new" }#{ redirect_to(@nomination) }
         format.xml  { render :xml => @nomination, :status => :created, :location => @nomination }
       else
+        flash[:warn] = 'Failed to create nomination.'
         format.html { render :action => "new" }
         format.xml  { render :xml => @nomination.errors, :status => :unprocessable_entity }
       end

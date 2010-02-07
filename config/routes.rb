@@ -26,6 +26,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/activate/:activation_code', :controller => 'users', :action => 'activate'
   map.connect '/leagues/join/:passcode', :controller => 'leagues', :action => 'join'
   map.connect '/leagues/join/:passcode.:format', :controller => 'leagues', :action => 'join'
+  map.connect '/leagues/:id/standings', :controller => 'leagues', :action => 'standings'
+  map.connect '/leagues/:id/standings.:format', :controller => 'leagues', :action => 'standings'
 
   # The priority is based upon order of creation: first created -> highest priority.
 
